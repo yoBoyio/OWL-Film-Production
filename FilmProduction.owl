@@ -23,9 +23,19 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/FilmProduction#AssistantCamera
+:AssistantCamera rdf:type owl:Class ;
+                 rdfs:subClassOf :DirectorOfPhotography .
+
+
 ###  http://www.semanticweb.org/FilmProduction#AssistantDirector
 :AssistantDirector rdf:type owl:Class ;
                    rdfs:subClassOf :Director .
+
+
+###  http://www.semanticweb.org/FilmProduction#Boom
+:Boom rdf:type owl:Class ;
+      rdfs:subClassOf :SoundRecorder .
 
 
 ###  http://www.semanticweb.org/FilmProduction#CastingDirector
@@ -36,6 +46,11 @@
 ###  http://www.semanticweb.org/FilmProduction#Director
 :Director rdf:type owl:Class ;
           rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/FilmProduction#DirectorOfPhotography
+:DirectorOfPhotography rdf:type owl:Class ;
+                       rdfs:subClassOf :HeadOfDepartment .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DomainEntity
@@ -101,6 +116,16 @@
 ###  http://www.semanticweb.org/FilmProduction#Sex
 :Sex rdf:type owl:Class ;
      rdfs:subClassOf :DomainEntity .
+
+
+###  http://www.semanticweb.org/FilmProduction#SoundDesigner
+:SoundDesigner rdf:type owl:Class ;
+               rdfs:subClassOf :HeadOfDepartment .
+
+
+###  http://www.semanticweb.org/FilmProduction#SoundRecorder
+:SoundRecorder rdf:type owl:Class ;
+               rdfs:subClassOf :SoundDesigner .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Woman
