@@ -12,11 +12,214 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/FilmProduction#hasManager
+:hasManager rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isManagerOf ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Departments ;
+            rdfs:range :Person .
+
+
 ###  http://www.semanticweb.org/FilmProduction#hasSex
-:hasSex rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
+:hasSex rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:FunctionalProperty ;
         rdfs:domain :Person ;
         rdfs:range :Sex .
+
+
+###  http://www.semanticweb.org/FilmProduction#isDirectedBy
+:isDirectedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isDirecting ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Movie ;
+              rdfs:range :Director .
+
+
+###  http://www.semanticweb.org/FilmProduction#isDirecting
+:isDirecting rdf:type owl:ObjectProperty ;
+             rdfs:domain :Director ;
+             rdfs:range :Movie .
+
+
+###  http://www.semanticweb.org/FilmProduction#isManagerOf
+:isManagerOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Employee ;
+             rdfs:range :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#worksAt
+:worksAt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Employee ;
+         rdfs:range :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#worksOnMovie
+:worksOnMovie rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :Movie .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/FilmProduction#birthPlace
+:birthPlace rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#birthYear
+:birthYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#boxOffice
+:boxOffice rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Movie ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#budget
+:budget rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Movie ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#cameraUsed
+:cameraUsed rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DirectorOfPhotography ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#dateOfHire
+:dateOfHire rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Employee ;
+            rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/FilmProduction#departmentBudget
+:departmentBudget rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Departments ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Movie ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#genre
+:genre rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Movie ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasDegree
+:hasDegree rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasFullfilledMilitaryService
+:hasFullfilledMilitaryService rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Man ;
+                              rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasWholeName
+:hasWholeName rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/FilmProduction#isSequel
+:isSequel rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Movie ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#microphoneUsed
+:microphoneUsed rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SoundDesigner ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :hasWholeName ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#noOfActors
+:noOfActors rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Movie ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#noOfPastMovies
+:noOfPastMovies rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Employee ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#noTimeOnCinema
+:noTimeOnCinema rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Movie ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#productionYear
+:productionYear rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Movie ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Movie ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#releaseDate
+:releaseDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#salary
+:salary rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Employee ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :hasWholeName ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#ticketsSold
+:ticketsSold rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Movie ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#workingHours
+:workingHours rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Employee ;
+              rdfs:range xsd:integer .
 
 
 #################################################################
@@ -25,71 +228,97 @@
 
 ###  http://www.semanticweb.org/FilmProduction#ArtDirector
 :ArtDirector rdf:type owl:Class ;
-             rdfs:subClassOf :ProductionDesigner .
+             owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :worksAt ;
+                                                          owl:someValuesFrom :Production
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
 
 
-###  http://www.semanticweb.org/FilmProduction#AssistantCamera
-:AssistantCamera rdf:type owl:Class ;
-                 rdfs:subClassOf :DirectorOfPhotography .
-
-
-###  http://www.semanticweb.org/FilmProduction#AssistantDirector
-:AssistantDirector rdf:type owl:Class ;
-                   rdfs:subClassOf :Director .
-
-
-###  http://www.semanticweb.org/FilmProduction#Boom
-:Boom rdf:type owl:Class ;
-      rdfs:subClassOf :SoundRecorder .
-
-
-###  http://www.semanticweb.org/FilmProduction#CastingDirector
-:CastingDirector rdf:type owl:Class ;
-                 rdfs:subClassOf :Producer .
+###  http://www.semanticweb.org/FilmProduction#Departments
+:Departments rdf:type owl:Class ;
+             rdfs:subClassOf :DomainEntity .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Director
 :Director rdf:type owl:Class ;
-          rdfs:subClassOf :Person .
+          owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isDirecting ;
+                                                       owl:someValuesFrom :Movie
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksAt ;
+                                                       owl:someValuesFrom :Management
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DirectorOfPhotography
 :DirectorOfPhotography rdf:type owl:Class ;
-                       rdfs:subClassOf :HeadOfDepartment .
+                       owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isManagerOf ;
+                                                                    owl:someValuesFrom :Photography
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DomainEntity
 :DomainEntity rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/FilmProduction#DubbingEditor
-:DubbingEditor rdf:type owl:Class ;
-               rdfs:subClassOf :Editor .
+###  http://www.semanticweb.org/FilmProduction#Editing
+:Editing rdf:type owl:Class ;
+         rdfs:subClassOf :Departments .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Editor
 :Editor rdf:type owl:Class ;
-        rdfs:subClassOf :HeadOfDepartment .
+        owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isManagerOf ;
+                                                     owl:someValuesFrom :Editing
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#Employee
+:Employee rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksOnMovie ;
+                                                       owl:someValuesFrom :Movie
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#ExecutiveProducer
 :ExecutiveProducer rdf:type owl:Class ;
-                   rdfs:subClassOf :Person .
+                   owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isManagerOf ;
+                                                                owl:someValuesFrom :Management
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Female
 :Female rdf:type owl:Class ;
         rdfs:subClassOf :Sex .
-
-
-###  http://www.semanticweb.org/FilmProduction#HeadOfDepartment
-:HeadOfDepartment rdf:type owl:Class ;
-                  rdfs:subClassOf :Person .
-
-
-###  http://www.semanticweb.org/FilmProduction#LocationManager
-:LocationManager rdf:type owl:Class ;
-                 rdfs:subClassOf :Producer .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Male
@@ -109,6 +338,28 @@
                          ] .
 
 
+###  http://www.semanticweb.org/FilmProduction#Management
+:Management rdf:type owl:Class ;
+            rdfs:subClassOf :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#Manager
+:Manager rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :isManagerOf ;
+                                                      owl:someValuesFrom :Departments
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :DomainEntity .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :DomainEntity ,
@@ -118,19 +369,38 @@
                         ] .
 
 
+###  http://www.semanticweb.org/FilmProduction#Photography
+:Photography rdf:type owl:Class ;
+             rdfs:subClassOf :Departments .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Producer
 :Producer rdf:type owl:Class ;
-          rdfs:subClassOf :Person .
+          owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksAt ;
+                                                       owl:someValuesFrom :Management
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#Production
+:Production rdf:type owl:Class ;
+            rdfs:subClassOf :Departments .
 
 
 ###  http://www.semanticweb.org/FilmProduction#ProductionDesigner
 :ProductionDesigner rdf:type owl:Class ;
-                    rdfs:subClassOf :HeadOfDepartment .
-
-
-###  http://www.semanticweb.org/FilmProduction#ProductionManager
-:ProductionManager rdf:type owl:Class ;
-                   rdfs:subClassOf :Producer .
+                    owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :isManagerOf ;
+                                                                 owl:someValuesFrom :Production
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Sex
@@ -138,14 +408,21 @@
      rdfs:subClassOf :DomainEntity .
 
 
+###  http://www.semanticweb.org/FilmProduction#Sound
+:Sound rdf:type owl:Class ;
+       rdfs:subClassOf :Departments .
+
+
 ###  http://www.semanticweb.org/FilmProduction#SoundDesigner
 :SoundDesigner rdf:type owl:Class ;
-               rdfs:subClassOf :HeadOfDepartment .
-
-
-###  http://www.semanticweb.org/FilmProduction#SoundRecorder
-:SoundRecorder rdf:type owl:Class ;
-               rdfs:subClassOf :SoundDesigner .
+               owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isManagerOf ;
+                                                            owl:someValuesFrom :Sound
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Woman
@@ -158,6 +435,91 @@
                                                 ) ;
                              rdf:type owl:Class
                            ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/FilmProduction#Columbia_Dept._Management
+:Columbia_Dept._Management rdf:type owl:NamedIndividual ,
+                                    :Management ;
+                           :departmentBudget 300000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#George_Lucas
+:George_Lucas rdf:type owl:NamedIndividual ,
+                       :Director ,
+                       :Man ;
+              :isDirecting :Star_Wars_I ,
+                           :Star_Wars_II ,
+                           :Star_Wars_III ;
+              :worksAt :Columbia_Dept._Management ;
+              :worksOnMovie :Star_Wars_I ,
+                            :Star_Wars_II ,
+                            :Star_Wars_III ;
+              :birthPlace "Modesto, California, United States"^^xsd:string ;
+              :birthYear 1944 ;
+              :dateOfHire 1997 ;
+              :hasDegree "true"^^xsd:boolean ;
+              :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+              :name "George"^^xsd:string ;
+              :noOfPastMovies 10 ;
+              :salary 1500000 ;
+              :surname "Lucas"^^xsd:string ;
+              :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_I
+:Star_Wars_I rdf:type owl:NamedIndividual ,
+                      :Movie ;
+             :isDirectedBy :George_Lucas ;
+             :boxOffice 1027000000 ;
+             :budget 115000000 ;
+             :duration 140 ;
+             :genre "Sci-Fi"^^xsd:string ;
+             :isSequel "true"^^xsd:boolean ;
+             :noOfActors 150 ;
+             :noTimeOnCinema 4 ;
+             :productionYear 1998 ;
+             :rating 16 ;
+             :releaseDate 1999 ;
+             :ticketsSold 300000000 ;
+             :title "Star Wars: The Phantom Menace"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_II
+:Star_Wars_II rdf:type owl:NamedIndividual ,
+                       :Movie ;
+              :boxOffice 400000000 ;
+              :budget 100000000 ;
+              :duration 145 ;
+              :genre "Sci-Fi"^^xsd:string ;
+              :isSequel "true"^^xsd:boolean ;
+              :noOfActors 120 ;
+              :noTimeOnCinema 5 ;
+              :productionYear 2003 ;
+              :rating 16 ;
+              :releaseDate 2004 ;
+              :ticketsSold 20000000 ;
+              :title "Star Wars 2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_III
+:Star_Wars_III rdf:type owl:NamedIndividual ,
+                        :Movie ;
+               :boxOffice 5000000000 ;
+               :budget 200000000 ;
+               :duration 120 ;
+               :genre "Action"^^xsd:string ;
+               :isSequel "true"^^xsd:boolean ;
+               :noOfActors 150 ;
+               :noTimeOnCinema 4 ;
+               :productionYear 2006 ;
+               :rating 18 ;
+               :releaseDate 2007 ;
+               :ticketsSold 200000000 ;
+               :title "Star Wars 3"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
