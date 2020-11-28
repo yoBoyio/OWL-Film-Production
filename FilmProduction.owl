@@ -12,54 +12,312 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/FilmProduction#hasManager
+:hasManager rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isManagerOf ;
+            rdfs:domain :Departments ;
+            rdfs:range :Person .
+
+
 ###  http://www.semanticweb.org/FilmProduction#hasSex
-:hasSex rdf:type owl:ObjectProperty ,
-                 owl:FunctionalProperty ;
+:hasSex rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:FunctionalProperty ;
         rdfs:domain :Person ;
         rdfs:range :Sex .
+
+
+###  http://www.semanticweb.org/FilmProduction#isDirectedBy
+:isDirectedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isDirecting ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Movie ;
+              rdfs:range :Director .
+
+
+###  http://www.semanticweb.org/FilmProduction#isDirecting
+:isDirecting rdf:type owl:ObjectProperty ;
+             rdfs:domain :Director ;
+             rdfs:range :Movie .
+
+
+###  http://www.semanticweb.org/FilmProduction#isManagerOf
+:isManagerOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Employee ;
+             rdfs:range :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#worksAt
+:worksAt rdf:type owl:ObjectProperty ;
+         rdfs:domain :Employee ;
+         rdfs:range :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#worksOnMovie
+:worksOnMovie rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :Movie .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/FilmProduction#birthPlace
+:birthPlace rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#birthYear
+:birthYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#boxOffice
+:boxOffice rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Movie ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#budget
+:budget rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Movie ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#cameraUsed
+:cameraUsed rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DirectorOfPhotography ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#dateOfHire
+:dateOfHire rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Employee ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#departmentBudget
+:departmentBudget rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Departments ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#duration
+:duration rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Movie ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#genre
+:genre rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Movie ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasDegree
+:hasDegree rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasFullfilledMilitaryService
+:hasFullfilledMilitaryService rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Man ;
+                              rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#hasWholeName
+:hasWholeName rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/FilmProduction#isSequel
+:isSequel rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Movie ;
+          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/FilmProduction#microphoneUsed
+:microphoneUsed rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SoundDesigner ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :hasWholeName ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#noOfActors
+:noOfActors rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Movie ;
+            rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#noOfPastMovies
+:noOfPastMovies rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Employee ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#noTimeOnCinema
+:noTimeOnCinema rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Movie ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#productionYear
+:productionYear rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Movie ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Movie ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#releaseDate
+:releaseDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#salary
+:salary rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Employee ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :hasWholeName ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#ticketsSold
+:ticketsSold rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Movie ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/FilmProduction#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Movie ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#workingHours
+:workingHours rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Employee ;
+              rdfs:range xsd:integer .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/FilmProduction#AssistantDirector
-:AssistantDirector rdf:type owl:Class ;
-                   rdfs:subClassOf :Director .
+###  http://www.semanticweb.org/FilmProduction#ArtDirector
+:ArtDirector rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :worksAt ;
+                                                          owl:someValuesFrom :Production
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
 
 
-###  http://www.semanticweb.org/FilmProduction#CastingDirector
-:CastingDirector rdf:type owl:Class ;
-                 rdfs:subClassOf :Producer .
+###  http://www.semanticweb.org/FilmProduction#Departments
+:Departments rdf:type owl:Class ;
+             rdfs:subClassOf :DomainEntity .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Director
 :Director rdf:type owl:Class ;
-          rdfs:subClassOf :Person .
+          owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isDirecting ;
+                                                       owl:someValuesFrom :Movie
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksAt ;
+                                                       owl:someValuesFrom :Management
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#DirectorOfPhotography
+:DirectorOfPhotography rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isManagerOf ;
+                                                                    owl:someValuesFrom :Photography
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DomainEntity
 :DomainEntity rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/FilmProduction#Editing
+:Editing rdf:type owl:Class ;
+         rdfs:subClassOf :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#Editor
+:Editor rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :isManagerOf ;
+                                                     owl:someValuesFrom :Editing
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#Employee
+:Employee rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksOnMovie ;
+                                                       owl:someValuesFrom :Movie
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
 ###  http://www.semanticweb.org/FilmProduction#ExecutiveProducer
 :ExecutiveProducer rdf:type owl:Class ;
-                   rdfs:subClassOf :Person .
+                   owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isManagerOf ;
+                                                                owl:someValuesFrom :Management
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Female
 :Female rdf:type owl:Class ;
         rdfs:subClassOf :Sex .
-
-
-###  http://www.semanticweb.org/FilmProduction#HeadOfDepartment
-:HeadOfDepartment rdf:type owl:Class ;
-                  rdfs:subClassOf :Person .
-
-
-###  http://www.semanticweb.org/FilmProduction#LocationManager
-:LocationManager rdf:type owl:Class ;
-                 rdfs:subClassOf :Producer .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Male
@@ -79,6 +337,28 @@
                          ] .
 
 
+###  http://www.semanticweb.org/FilmProduction#Management
+:Management rdf:type owl:Class ;
+            rdfs:subClassOf :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#Manager
+:Manager rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :isManagerOf ;
+                                                      owl:someValuesFrom :Departments
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] .
+
+
+###  http://www.semanticweb.org/FilmProduction#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :DomainEntity .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf :DomainEntity ,
@@ -88,19 +368,60 @@
                         ] .
 
 
+###  http://www.semanticweb.org/FilmProduction#Photography
+:Photography rdf:type owl:Class ;
+             rdfs:subClassOf :Departments .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Producer
 :Producer rdf:type owl:Class ;
-          rdfs:subClassOf :Person .
+          owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :worksAt ;
+                                                       owl:someValuesFrom :Management
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
 
 
-###  http://www.semanticweb.org/FilmProduction#ProductionManager
-:ProductionManager rdf:type owl:Class ;
-                   rdfs:subClassOf :Producer .
+###  http://www.semanticweb.org/FilmProduction#Production
+:Production rdf:type owl:Class ;
+            rdfs:subClassOf :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#ProductionDesigner
+:ProductionDesigner rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :isManagerOf ;
+                                                                 owl:someValuesFrom :Production
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Sex
 :Sex rdf:type owl:Class ;
      rdfs:subClassOf :DomainEntity .
+
+
+###  http://www.semanticweb.org/FilmProduction#Sound
+:Sound rdf:type owl:Class ;
+       rdfs:subClassOf :Departments .
+
+
+###  http://www.semanticweb.org/FilmProduction#SoundDesigner
+:SoundDesigner rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :isManagerOf ;
+                                                            owl:someValuesFrom :Sound
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Woman
@@ -113,6 +434,555 @@
                                                 ) ;
                              rdf:type owl:Class
                            ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/FilmProduction#Ben_Affleck
+:Ben_Affleck rdf:type owl:NamedIndividual ,
+                      :ExecutiveProducer ;
+             :isManagerOf :Columbia_Dept._Management ;
+             :worksAt :Columbia_Dept._Management ;
+             :worksOnMovie :Star_Wars_I ,
+                           :Star_Wars_II ,
+                           :Star_Wars_III ;
+             :birthPlace " Berkeley, California, United States"^^xsd:string ;
+             :birthYear 1972 ;
+             :dateOfHire 1998 ;
+             :hasDegree "true"^^xsd:boolean ;
+             :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+             :name "Benjamin Géza"^^xsd:string ;
+             :noOfPastMovies 50 ;
+             :salary 650000000 ;
+             :surname "Affleck-Boldt"^^xsd:string ;
+             :workingHours 8 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Columbia_Dept._Management
+:Columbia_Dept._Management rdf:type owl:NamedIndividual ,
+                                    :Management ;
+                           :departmentBudget 300000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Columbia_Dept._Photography
+:Columbia_Dept._Photography rdf:type owl:NamedIndividual ,
+                                     :Photography ;
+                            :departmentBudget 500000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Columbia_Dept._Production
+:Columbia_Dept._Production rdf:type owl:NamedIndividual ,
+                                    :Production ;
+                           :departmentBudget 400000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Deadpool
+:Deadpool rdf:type owl:NamedIndividual ,
+                   :Movie ;
+          :boxOffice 783000000 ;
+          :budget 58000000 ;
+          :duration 109 ;
+          :genre "action"^^xsd:string ;
+          :isSequel "true"^^xsd:boolean ;
+          :noOfActors 19 ;
+          :noTimeOnCinema 4 ;
+          :productionYear 2015 ;
+          :releaseDate 2016 ;
+          :ticketsSold 200000000 ;
+          :title "Deadpool"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Deadpool_II
+:Deadpool_II rdf:type owl:NamedIndividual ,
+                      :Movie .
+
+
+###  http://www.semanticweb.org/FilmProduction#Dimitri_Dimitrov
+:Dimitri_Dimitrov rdf:type owl:NamedIndividual ,
+                           :Man ,
+                           :Manager ;
+                  :isManagerOf :Fox_Dept._Production ;
+                  :birthPlace "Moscow,Russia"^^xsd:string ;
+                  :birthYear 1970 ;
+                  :dateOfHire 1995 ;
+                  :hasDegree "true"^^xsd:boolean ;
+                  :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                  :name "Dimitri"^^xsd:string ;
+                  :salary 15000 ;
+                  :surname "Dimitrov"^^xsd:string ;
+                  :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Dimos_Sidiropoulos
+:Dimos_Sidiropoulos rdf:type owl:NamedIndividual ,
+                             :Editor ,
+                             :Man ;
+                    :worksAt :Pixar_Dept._Editing ;
+                    :birthPlace "Neapoli, Sykies, Greece"^^xsd:string ;
+                    :birthYear 1999 ;
+                    :dateOfHire 2020 ;
+                    :hasDegree "false"^^xsd:boolean ;
+                    :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                    :name "Dimos"^^xsd:string ;
+                    :noOfPastMovies 0 ;
+                    :salary 650 ;
+                    :surname "Sidiropoulos"^^xsd:string ;
+                    :workingHours 80 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Elizabeth_Gray
+:Elizabeth_Gray rdf:type owl:NamedIndividual ,
+                         :ArtDirector ,
+                         :Woman ;
+                :worksAt :Columbia_Dept._Production ;
+                :worksOnMovie :Star_Wars_II ;
+                :birthPlace "Africa"^^xsd:string ;
+                :birthYear 1969 ;
+                :dateOfHire 2001 ;
+                :hasDegree "false"^^xsd:boolean ;
+                :name "Elizabeth"^^xsd:string ;
+                :noOfPastMovies 0 ;
+                :salary 30000 ;
+                :surname "Gray"^^xsd:string ;
+                :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Elizabeth_Kape
+:Elizabeth_Kape rdf:type owl:NamedIndividual ,
+                         :ExecutiveProducer ,
+                         :Woman ;
+                :isManagerOf :Fox_Dept._Management ;
+                :worksAt :Fox_Dept._Management .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Management
+:Fox_Dept._Management rdf:type owl:NamedIndividual ,
+                               :Management ;
+                      :budget 150000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Production
+:Fox_Dept._Production rdf:type owl:NamedIndividual ,
+                               :Production ;
+                      :departmentBudget 10000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#George_Lucas
+:George_Lucas rdf:type owl:NamedIndividual ,
+                       :Director ,
+                       :Man ;
+              :isDirecting :Star_Wars_I ,
+                           :Star_Wars_II ,
+                           :Star_Wars_III ;
+              :worksAt :Columbia_Dept._Management ;
+              :worksOnMovie :Star_Wars_I ,
+                            :Star_Wars_II ,
+                            :Star_Wars_III ;
+              :birthPlace "Modesto, California, United States"^^xsd:string ;
+              :birthYear 1944 ;
+              :dateOfHire 1997 ;
+              :hasDegree "true"^^xsd:boolean ;
+              :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+              :name "George"^^xsd:string ;
+              :noOfPastMovies 10 ;
+              :salary 1500000 ;
+              :surname "Lucas"^^xsd:string ;
+              :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Helena_Paparizoy
+:Helena_Paparizoy rdf:type owl:NamedIndividual ,
+                           :Producer ,
+                           :Woman ;
+                  :worksAt :Columbia_Dept._Management ;
+                  :worksOnMovie :Star_Wars_II ;
+                  :birthPlace "Boras, Sweden"^^xsd:string ;
+                  :birthYear 1982 ;
+                  :dateOfHire 2010 ;
+                  :hasDegree "false"^^xsd:boolean ;
+                  :name "Helena"^^xsd:string ;
+                  :noOfPastMovies 0 ;
+                  :salary 30000 ;
+                  :surname "Paparizoy"^^xsd:string ;
+                  :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#James_Franco
+:James_Franco rdf:type owl:NamedIndividual ,
+                       :Man ,
+                       :Manager ;
+              :worksOnMovie :The_Smurfs ;
+              :birthPlace "Palo Alto, California, United States"^^xsd:string ;
+              :birthYear 1978 ;
+              :dateOfHire 2003 ;
+              :hasDegree "true"^^xsd:boolean ;
+              :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+              :name "James Edward"^^xsd:string ;
+              :noOfPastMovies 4 ;
+              :salary 30000000 ;
+              :surname "Franco"^^xsd:string ;
+              :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Mary_Jones
+:Mary_Jones rdf:type owl:NamedIndividual ,
+                     :ExecutiveProducer ,
+                     :Woman ;
+            :isManagerOf :Fox_Dept._Management ;
+            :worksAt :Fox_Dept._Management ;
+            :worksOnMovie :Deadpool ;
+            :birthPlace "New York, USA"^^xsd:string ;
+            :birthYear 1980 ;
+            :dateOfHire 2010 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :name "Mary"^^xsd:string ;
+            :noOfPastMovies 6 ;
+            :salary 10000 ;
+            :surname "Jones"^^xsd:string ;
+            :workingHours 45 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Michael_Bay
+:Michael_Bay rdf:type owl:NamedIndividual ,
+                      :Man ,
+                      :Producer ,
+                      :ProductionDesigner ;
+             :isManagerOf :Columbia_Dept._Production ;
+             :worksAt :Columbia_Dept._Production ;
+             :birthPlace "Los Angeles, California, United States"^^xsd:string ;
+             :birthYear 1965 ;
+             :dateOfHire 1999 ;
+             :hasDegree "false"^^xsd:boolean ;
+             :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+             :name "Michael Bejamin"^^xsd:string ;
+             :noOfPastMovies 3 ;
+             :salary 3000000000 ;
+             :surname "Bay"^^xsd:string ;
+             :workingHours 20 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Pixar_Dept._Editing
+:Pixar_Dept._Editing rdf:type owl:NamedIndividual ,
+                              :Editing ;
+                     :hasManager :Dimos_Sidiropoulos ;
+                     :departmentBudget 3 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Pixar_Dept._Sound
+:Pixar_Dept._Sound rdf:type owl:NamedIndividual ,
+                            :Sound ;
+                   :hasManager :Randy_Thom ;
+                   :departmentBudget 5 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Randy_Thom
+:Randy_Thom rdf:type owl:NamedIndividual ,
+                     :Man ,
+                     :SoundDesigner ;
+            :isManagerOf :Pixar_Dept._Sound ;
+            :worksOnMovie :The_Smurfs ;
+            :birthPlace "Shreveport, Louisiana, United States"^^xsd:string ;
+            :birthYear 1951 ;
+            :dateOfHire 1979 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+            :microphoneUsed "Blue Yeti USB"^^xsd:string ;
+            :name "David Randall"^^xsd:string ;
+            :noOfPastMovies 16 ;
+            :salary 1500 ;
+            :surname "Thom"^^xsd:string ;
+            :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_I
+:Star_Wars_I rdf:type owl:NamedIndividual ,
+                      :Movie ;
+             :isDirectedBy :George_Lucas ;
+             :boxOffice 1027000000 ;
+             :budget 115000000 ;
+             :duration 140 ;
+             :genre "Sci-Fi"^^xsd:string ;
+             :isSequel "true"^^xsd:boolean ;
+             :noOfActors 150 ;
+             :noTimeOnCinema 4 ;
+             :productionYear 1998 ;
+             :rating 16 ;
+             :releaseDate 1999 ;
+             :ticketsSold 300000000 ;
+             :title "Star Wars: The Phantom Menace"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_II
+:Star_Wars_II rdf:type owl:NamedIndividual ,
+                       :Movie ;
+              :isDirectedBy :George_Lucas ;
+              :boxOffice 400000000 ;
+              :budget 100000000 ;
+              :duration 145 ;
+              :genre "Sci-Fi"^^xsd:string ;
+              :isSequel "true"^^xsd:boolean ;
+              :noOfActors 120 ;
+              :noTimeOnCinema 4 ,
+                              5 ;
+              :productionYear 2003 ;
+              :rating 16 ;
+              :releaseDate 2004 ;
+              :ticketsSold 20000000 ;
+              :title "Star Wars 2"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Star_Wars_III
+:Star_Wars_III rdf:type owl:NamedIndividual ,
+                        :Movie ;
+               :isDirectedBy :George_Lucas ;
+               :boxOffice 5000000000 ;
+               :budget 200000000 ;
+               :duration 120 ;
+               :genre "Action"^^xsd:string ;
+               :isSequel "true"^^xsd:boolean ;
+               :noOfActors 150 ;
+               :noTimeOnCinema 4 ;
+               :productionYear 2006 ;
+               :rating 18 ;
+               :releaseDate 2007 ;
+               :ticketsSold 200000000 ;
+               :title "Star Wars 3"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#The_Smurfs
+:The_Smurfs rdf:type owl:NamedIndividual ,
+                     :Movie ;
+            :boxOffice 563700000 ;
+            :budget 10000000 ;
+            :duration 103 ;
+            :genre "Family/Animation"^^xsd:string ;
+            :isSequel "true"^^xsd:boolean ;
+            :noOfActors 5 ;
+            :noTimeOnCinema 1 ;
+            :productionYear 2009 ;
+            :rating 12 ;
+            :releaseDate 2011 ;
+            :ticketsSold 100000000 ;
+            :title "The Smurfs"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Tim_Miller
+:Tim_Miller rdf:type owl:NamedIndividual ,
+                     :Man ,
+                     :Producer ;
+            :isDirecting :Deadpool ,
+                         :Deadpool_II ;
+            :worksAt :Fox_Dept._Management ;
+            :worksOnMovie :Deadpool ,
+                          :Deadpool_II ;
+            :birthPlace "Fort Washington, USA"^^xsd:string ;
+            :birthYear 1964 ;
+            :dateOfHire 1995 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :name "Tim"^^xsd:string ;
+            :noOfPastMovies 20 ;
+            :salary 20000 ;
+            :surname "Miller"^^xsd:string ;
+            :workingHours 80 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Tomas_Kotsiopoulos
+:Tomas_Kotsiopoulos rdf:type owl:NamedIndividual ,
+                             :Man ,
+                             :Producer ,
+                             :ProductionDesigner ;
+                    :worksAt :Fox_Dept._Production ;
+                    :worksOnMovie :Deadpool ;
+                    :birthPlace "Athens, Greece"^^xsd:string ;
+                    :birthYear 1982 ;
+                    :dateOfHire 1999 ;
+                    :hasDegree "true"^^xsd:boolean ;
+                    :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                    :name "Tomas"^^xsd:string ;
+                    :noOfPastMovies 10 ;
+                    :salary 4000 ;
+                    :surname "Kotsiopoulos"^^xsd:string ;
+                    :workingHours 40 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Zach_Galifianakis
+:Zach_Galifianakis rdf:type owl:NamedIndividual ,
+                            :DirectorOfPhotography ,
+                            :Man ;
+                   :isManagerOf :Columbia_Dept._Photography ;
+                   :worksAt :Columbia_Dept._Photography ;
+                   :worksOnMovie :Star_Wars_III ;
+                   :birthPlace "Wilkesboro, North Carolina, United States"^^xsd:string ;
+                   :birthYear 1969 ;
+                   :cameraUsed "RED KOMODO 6K"^^xsd:string ;
+                   :dateOfHire 2000 ;
+                   :hasDegree "true"^^xsd:boolean ;
+                   :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                   :name "Zach Knight"^^xsd:string ;
+                   :noOfPastMovies 16 ;
+                   :salary 15000000 ;
+                   :surname "Galifianakis"^^xsd:string ;
+                   :workingHours 12 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Ben_Affleck
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Columbia_Dept._Management
+                        :Fox_Dept._Management
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Columbia_Dept._Photography
+                        :Dimos_Sidiropoulos
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_I
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_II
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :The_Smurfs
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Dimos_Sidiropoulos
+                        :Elizabeth_Gray
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Dimos_Sidiropoulos
+                        :George_Lucas
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Dimos_Sidiropoulos
+                        :Michael_Bay
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Elizabeth_Gray
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :George_Lucas
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Helena_Paparizoy
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :James_Franco
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Mary_Jones
+                        :Michael_Bay
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Mary_Jones
+                        :Zach_Galifianakis
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :Star_Wars_II
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :The_Smurfs
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_II
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_II
+                        :The_Smurfs
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_III
+                        :The_Smurfs
+                      )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
