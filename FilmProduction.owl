@@ -478,6 +478,24 @@
                            :departmentBudget 400000000 .
 
 
+###  http://www.semanticweb.org/FilmProduction#Dimitris_Tolios
+:Dimitris_Tolios rdf:type owl:NamedIndividual ,
+                          :SoundDesigner ,
+                          :Woman ;
+                 :worksAt :Paramount_Dept._Sound ;
+                 :worksOnMovie :Forrest_Gump ;
+                 :birthPlace "Prosotsani, Drama, Greece"^^xsd:string ;
+                 :birthYear 1999 ;
+                 :dateOfHire 2017 ;
+                 :hasDegree "false"^^xsd:boolean ;
+                 :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                 :name "Dimitris"^^xsd:string ;
+                 :noOfPastMovies 3 ;
+                 :salary 35000 ;
+                 :surname "Tolios"^^xsd:string ;
+                 :workingHours 45 .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Dimos_Sidiropoulos
 :Dimos_Sidiropoulos rdf:type owl:NamedIndividual ,
                              :Editor ,
@@ -515,6 +533,7 @@
 ###  http://www.semanticweb.org/FilmProduction#Forrest_Gump
 :Forrest_Gump rdf:type owl:NamedIndividual ,
                        :Movie ;
+              :isDirectedBy :Robert_Zemeckis ;
               :boxOffice 683000000 ;
               :budget 55000000 ;
               :duration 144 ;
@@ -605,6 +624,23 @@
                   :workingHours 40 .
 
 
+###  http://www.semanticweb.org/FilmProduction#Ilias_Psinakis
+:Ilias_Psinakis rdf:type owl:NamedIndividual ,
+                         :Man ,
+                         :Manager ;
+                :worksOnMovie :Seven ;
+                :birthPlace "Athens, Greece" ;
+                :birthYear 1958 ;
+                :dateOfHire 2004 ;
+                :hasDegree "true"^^xsd:boolean ;
+                :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                :name "Ilias"^^xsd:string ;
+                :noOfPastMovies 11 ;
+                :salary 60000 ;
+                :surname "Psinakis"^^xsd:string ;
+                :workingHours 50 .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Interstellar
 :Interstellar rdf:type owl:NamedIndividual ,
                        :Movie ;
@@ -638,6 +674,24 @@
               :workingHours 40 .
 
 
+###  http://www.semanticweb.org/FilmProduction#Maria_Papanikolaou
+:Maria_Papanikolaou rdf:type owl:NamedIndividual ,
+                             :ProductionDesigner ,
+                             :Woman ;
+                    :worksAt :Paramount_Dept._Production ;
+                    :worksOnMovie :Interstellar ;
+                    :birthPlace "Patra, Greece"^^xsd:string ;
+                    :birthYear 1970 ;
+                    :dateOfHire 2001 ;
+                    :hasDegree "true"^^xsd:boolean ;
+                    :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                    :name "Maria"^^xsd:string ;
+                    :noOfPastMovies 15 ;
+                    :salary 50000 ;
+                    :surname "Papanikolaou"^^xsd:string ;
+                    :workingHours 50 .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Martin_Kaintas
 :Martin_Kaintas rdf:type owl:NamedIndividual ,
                          :Editor ,
@@ -654,6 +708,24 @@
                 :salary 25000 ;
                 :surname "Kaintas"^^xsd:string ;
                 :workingHours 45 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Martin_Scorsese
+:Martin_Scorsese rdf:type owl:NamedIndividual ,
+                          :Man ,
+                          :Producer ;
+                 :worksAt :Paramount_Dept._Production ;
+                 :worksOnMovie :Interstellar ;
+                 :birthPlace "New York City, Unites States"^^xsd:string ;
+                 :birthYear 1942 ;
+                 :dateOfHire 1999 ;
+                 :hasDegree "true"^^xsd:boolean ;
+                 :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                 :name "Martin"^^xsd:string ;
+                 :noOfPastMovies 22 ;
+                 :salary 500000 ;
+                 :surname "Scorsese"^^xsd:string ;
+                 :workingHours 60 .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Michael_Bay
