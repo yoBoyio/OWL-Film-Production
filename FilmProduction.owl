@@ -478,6 +478,43 @@
                            :departmentBudget 400000000 .
 
 
+
+###  http://www.semanticweb.org/FilmProduction#Deadpool
+:Deadpool rdf:type owl:NamedIndividual ,
+                   :Movie ;
+          :boxOffice 783000000 ;
+          :budget 58000000 ;
+          :duration 109 ;
+          :genre "action"^^xsd:string ;
+          :isSequel "true"^^xsd:boolean ;
+          :noOfActors 19 ;
+          :noTimeOnCinema 4 ;
+          :productionYear 2015 ;
+          :releaseDate 2016 ;
+          :ticketsSold 200000000 ;
+          :title "Deadpool"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Deadpool_II
+:Deadpool_II rdf:type owl:NamedIndividual ,
+                      :Movie .
+
+
+###  http://www.semanticweb.org/FilmProduction#Dimitri_Dimitrov
+:Dimitri_Dimitrov rdf:type owl:NamedIndividual ,
+                           :Man ,
+                           :Manager ;
+                  :isManagerOf :Fox_Dept._Production ;
+                  :birthPlace "Moscow,Russia"^^xsd:string ;
+                  :birthYear 1970 ;
+                  :dateOfHire 1995 ;
+                  :hasDegree "true"^^xsd:boolean ;
+                  :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                  :name "Dimitri"^^xsd:string ;
+                  :salary 15000 ;
+                  :surname "Dimitrov"^^xsd:string ;
+                  :workingHours 40 .
+
 ###  http://www.semanticweb.org/FilmProduction#Dimitris_Tolios
 :Dimitris_Tolios rdf:type owl:NamedIndividual ,
                           :SoundDesigner ,
@@ -529,6 +566,25 @@
                 :surname "Gray"^^xsd:string ;
                 :workingHours 40 .
 
+
+###  http://www.semanticweb.org/FilmProduction#Elizabeth_Kape
+:Elizabeth_Kape rdf:type owl:NamedIndividual ,
+                         :ExecutiveProducer ,
+                         :Woman ;
+                :isManagerOf :Fox_Dept._Management ;
+                :worksAt :Fox_Dept._Management .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Management
+:Fox_Dept._Management rdf:type owl:NamedIndividual ,
+                               :Management ;
+                      :budget 150000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Production
+:Fox_Dept._Production rdf:type owl:NamedIndividual ,
+                               :Production ;
+                      :departmentBudget 10000000 .
 
 ###  http://www.semanticweb.org/FilmProduction#Forrest_Gump
 :Forrest_Gump rdf:type owl:NamedIndividual ,
@@ -588,6 +644,7 @@
               :workingHours 40 .
 
 
+
 ###  http://www.semanticweb.org/FilmProduction#George_Papadopoulos
 :George_Papadopoulos rdf:type owl:NamedIndividual ,
                               :ExecutiveProducer ,
@@ -622,6 +679,7 @@
                   :salary 30000 ;
                   :surname "Paparizoy"^^xsd:string ;
                   :workingHours 40 .
+
 
 
 ###  http://www.semanticweb.org/FilmProduction#Ilias_Psinakis
@@ -673,6 +731,23 @@
               :surname "Franco"^^xsd:string ;
               :workingHours 40 .
 
+
+###  http://www.semanticweb.org/FilmProduction#Mary_Jones
+:Mary_Jones rdf:type owl:NamedIndividual ,
+                     :ExecutiveProducer ,
+                     :Woman ;
+            :isManagerOf :Fox_Dept._Management ;
+            :worksAt :Fox_Dept._Management ;
+            :worksOnMovie :Deadpool ;
+            :birthPlace "New York, USA"^^xsd:string ;
+            :birthYear 1980 ;
+            :dateOfHire 2010 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :name "Mary"^^xsd:string ;
+            :noOfPastMovies 6 ;
+            :salary 10000 ;
+            :surname "Jones"^^xsd:string ;
+            :workingHours 45 .
 
 ###  http://www.semanticweb.org/FilmProduction#Maria_Papanikolaou
 :Maria_Papanikolaou rdf:type owl:NamedIndividual ,
@@ -747,6 +822,7 @@
              :workingHours 20 .
 
 
+
 ###  http://www.semanticweb.org/FilmProduction#Paramount_Dept._Editing
 :Paramount_Dept._Editing rdf:type owl:NamedIndividual ,
                                   :Editing ;
@@ -793,6 +869,7 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Randy_Thom
 :Randy_Thom rdf:type owl:NamedIndividual ,
+                     :Man ,
                      :SoundDesigner ;
             :isManagerOf :Pixar_Dept._Sound ;
             :worksOnMovie :The_Smurfs ;
@@ -864,6 +941,7 @@
 ###  http://www.semanticweb.org/FilmProduction#Star_Wars_II
 :Star_Wars_II rdf:type owl:NamedIndividual ,
                        :Movie ;
+              :isDirectedBy :George_Lucas ;
               :boxOffice 400000000 ;
               :budget 100000000 ;
               :duration 145 ;
@@ -913,6 +991,44 @@
             :title "The Smurfs"^^xsd:string .
 
 
+###  http://www.semanticweb.org/FilmProduction#Tim_Miller
+:Tim_Miller rdf:type owl:NamedIndividual ,
+                     :Man ,
+                     :Producer ;
+            :isDirecting :Deadpool ,
+                         :Deadpool_II ;
+            :worksAt :Fox_Dept._Management ;
+            :worksOnMovie :Deadpool ,
+                          :Deadpool_II ;
+            :birthPlace "Fort Washington, USA"^^xsd:string ;
+            :birthYear 1964 ;
+            :dateOfHire 1995 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :name "Tim"^^xsd:string ;
+            :noOfPastMovies 20 ;
+            :salary 20000 ;
+            :surname "Miller"^^xsd:string ;
+            :workingHours 80 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Tomas_Kotsiopoulos
+:Tomas_Kotsiopoulos rdf:type owl:NamedIndividual ,
+                             :Man ,
+                             :Producer ,
+                             :ProductionDesigner ;
+                    :worksAt :Fox_Dept._Production ;
+                    :worksOnMovie :Deadpool ;
+                    :birthPlace "Athens, Greece"^^xsd:string ;
+                    :birthYear 1982 ;
+                    :dateOfHire 1999 ;
+                    :hasDegree "true"^^xsd:boolean ;
+                    :hasFullfilledMilitaryService "true"^^xsd:boolean ;
+                    :name "Tomas"^^xsd:string ;
+                    :noOfPastMovies 10 ;
+                    :salary 4000 ;
+                    :surname "Kotsiopoulos"^^xsd:string ;
+                    :workingHours 40 .
+
 ###  http://www.semanticweb.org/FilmProduction#Vicky_Kaya
 :Vicky_Kaya rdf:type owl:NamedIndividual ,
                      :ArtDirector ,
@@ -956,8 +1072,50 @@
 #################################################################
 
 [ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Ben_Affleck
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Columbia_Dept._Management
+                        :Fox_Dept._Management
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Columbia_Dept._Photography
                         :Dimos_Sidiropoulos
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_I
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_II
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :The_Smurfs
                       )
 ] .
 
@@ -981,6 +1139,91 @@
                         :Michael_Bay
                       )
 ] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Elizabeth_Gray
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :George_Lucas
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Helena_Paparizoy
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :James_Franco
+                        :Mary_Jones
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Mary_Jones
+                        :Michael_Bay
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Mary_Jones
+                        :Zach_Galifianakis
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :Star_Wars_II
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_I
+                        :The_Smurfs
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_II
+                        :Star_Wars_III
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_II
+                        :The_Smurfs
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Star_Wars_III
+                        :The_Smurfs
+                      )
+] .
+
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
