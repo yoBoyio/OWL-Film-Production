@@ -228,6 +228,9 @@
 ###  http://www.semanticweb.org/FilmProduction#ArtDirector
 :ArtDirector rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                        [ rdf:type owl:Class ;
+                                                          owl:complementOf :ProductionDesigner
+                                                        ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :worksAt ;
                                                           owl:someValuesFrom :Production
@@ -530,8 +533,7 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitris_Tolios
 :Dimitris_Tolios rdf:type owl:NamedIndividual ,
-                          :SoundDesigner ,
-                          :Woman ;
+                          :SoundDesigner ;
                  :worksAt :Paramount_Dept._Sound ;
                  :worksOnMovie :Forrest_Gump ;
                  :birthPlace "Prosotsani, Drama, Greece"^^xsd:string ;
@@ -597,9 +599,9 @@
               :duration 144 ;
               :genre "Drama"^^xsd:string ;
               :isSequel "false"^^xsd:boolean ;
-              :noOfActors "false"^^xsd:boolean ;
+              :noOfActors 50 ;
               :productionYear 1993 ;
-              :rating "13"^^xsd:string ;
+              :rating 13 ;
               :releaseDate 1994 ;
               :ticketsSold 50000000 ;
               :title "Forrest Gump"^^xsd:string .
@@ -608,7 +610,7 @@
 ###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Management
 :Fox_Dept._Management rdf:type owl:NamedIndividual ,
                                :Management ;
-                      :budget 150000000 .
+                      :departmentBudget 150000000 .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Production
@@ -754,7 +756,6 @@
                     :birthYear 1970 ;
                     :dateOfHire 2001 ;
                     :hasDegree "true"^^xsd:boolean ;
-                    :hasFullfilledMilitaryService "false"^^xsd:boolean ;
                     :name "Maria"^^xsd:string ;
                     :noOfPastMovies 15 ;
                     :salary 50000 ;
@@ -784,7 +785,7 @@
 :Martin_Scorsese rdf:type owl:NamedIndividual ,
                           :Man ,
                           :Producer ;
-                 :worksAt :Paramount_Dept._Production ;
+                 :worksAt :Paramount_Dept._Managment ;
                  :worksOnMovie :Interstellar ;
                  :birthPlace "New York City, Unites States"^^xsd:string ;
                  :birthYear 1942 ;
@@ -903,7 +904,7 @@
                           :Director ,
                           :Man ;
                  :isDirecting :Forrest_Gump ;
-                 :worksAt :Paramount_Dept._Production ;
+                 :worksAt :Paramount_Dept._Managment ;
                  :worksOnMovie :Forrest_Gump ;
                  :birthPlace "Chicago, Illinois, United States"^^xsd:string ;
                  :birthYear 1952 ;
@@ -928,7 +929,7 @@
        :noOfActors 61 ;
        :productionYear 1994 ;
        :releaseDate 1995 ;
-       :ticketsSold "21000000"^^xsd:string ;
+       :ticketsSold 21000000 ;
        :title "Seven"^^xsd:string .
 
 
@@ -1028,7 +1029,7 @@
                              :Man ,
                              :Producer ,
                              :ProductionDesigner ;
-                    :worksAt :Fox_Dept._Production ;
+                    :worksAt :Fox_Dept._Management ;
                     :worksOnMovie :Deadpool ;
                     :birthPlace "Athens, Greece"^^xsd:string ;
                     :birthYear 1982 ;
@@ -1052,7 +1053,6 @@
             :birthYear 1978 ;
             :dateOfHire 2004 ;
             :hasDegree "false"^^xsd:boolean ;
-            :hasFullfilledMilitaryService "false"^^xsd:boolean ;
             :name "Vicky"^^xsd:string ;
             :noOfPastMovies 6 ;
             :salary 50000 ;
