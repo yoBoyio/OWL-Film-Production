@@ -478,10 +478,10 @@
                            :departmentBudget 400000000 .
 
 
-
 ###  http://www.semanticweb.org/FilmProduction#Deadpool
 :Deadpool rdf:type owl:NamedIndividual ,
                    :Movie ;
+          :isDirectedBy :Tim_Miller ;
           :boxOffice 783000000 ;
           :budget 58000000 ;
           :duration 109 ;
@@ -497,7 +497,19 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Deadpool_II
 :Deadpool_II rdf:type owl:NamedIndividual ,
-                      :Movie .
+                      :Movie ;
+             :isDirectedBy :Tim_Miller ;
+             :boxOffice 785000000 ;
+             :duration 135 ;
+             :genre "Action"^^xsd:string ;
+             :isSequel "true"^^xsd:boolean ;
+             :noOfActors 20 ;
+             :noTimeOnCinema 34 ;
+             :productionYear 2017 ;
+             :rating 5 ;
+             :releaseDate 2018 ;
+             :ticketsSold 250000000 ;
+             :title "Deadpoll II"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitri_Dimitrov
@@ -514,6 +526,7 @@
                   :salary 15000 ;
                   :surname "Dimitrov"^^xsd:string ;
                   :workingHours 40 .
+
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitris_Tolios
 :Dimitris_Tolios rdf:type owl:NamedIndividual ,
@@ -575,17 +588,6 @@
                 :worksAt :Fox_Dept._Management .
 
 
-###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Management
-:Fox_Dept._Management rdf:type owl:NamedIndividual ,
-                               :Management ;
-                      :budget 150000000 .
-
-
-###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Production
-:Fox_Dept._Production rdf:type owl:NamedIndividual ,
-                               :Production ;
-                      :departmentBudget 10000000 .
-
 ###  http://www.semanticweb.org/FilmProduction#Forrest_Gump
 :Forrest_Gump rdf:type owl:NamedIndividual ,
                        :Movie ;
@@ -601,6 +603,18 @@
               :releaseDate 1994 ;
               :ticketsSold 50000000 ;
               :title "Forrest Gump"^^xsd:string .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Management
+:Fox_Dept._Management rdf:type owl:NamedIndividual ,
+                               :Management ;
+                      :budget 150000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept._Production
+:Fox_Dept._Production rdf:type owl:NamedIndividual ,
+                               :Production ;
+                      :departmentBudget 10000000 .
 
 
 ###  http://www.semanticweb.org/FilmProduction#George_Koutsiamoneys
@@ -644,7 +658,6 @@
               :workingHours 40 .
 
 
-
 ###  http://www.semanticweb.org/FilmProduction#George_Papadopoulos
 :George_Papadopoulos rdf:type owl:NamedIndividual ,
                               :ExecutiveProducer ,
@@ -679,7 +692,6 @@
                   :salary 30000 ;
                   :surname "Paparizoy"^^xsd:string ;
                   :workingHours 40 .
-
 
 
 ###  http://www.semanticweb.org/FilmProduction#Ilias_Psinakis
@@ -731,23 +743,6 @@
               :surname "Franco"^^xsd:string ;
               :workingHours 40 .
 
-
-###  http://www.semanticweb.org/FilmProduction#Mary_Jones
-:Mary_Jones rdf:type owl:NamedIndividual ,
-                     :ExecutiveProducer ,
-                     :Woman ;
-            :isManagerOf :Fox_Dept._Management ;
-            :worksAt :Fox_Dept._Management ;
-            :worksOnMovie :Deadpool ;
-            :birthPlace "New York, USA"^^xsd:string ;
-            :birthYear 1980 ;
-            :dateOfHire 2010 ;
-            :hasDegree "true"^^xsd:boolean ;
-            :name "Mary"^^xsd:string ;
-            :noOfPastMovies 6 ;
-            :salary 10000 ;
-            :surname "Jones"^^xsd:string ;
-            :workingHours 45 .
 
 ###  http://www.semanticweb.org/FilmProduction#Maria_Papanikolaou
 :Maria_Papanikolaou rdf:type owl:NamedIndividual ,
@@ -803,6 +798,24 @@
                  :workingHours 60 .
 
 
+###  http://www.semanticweb.org/FilmProduction#Mary_Jones
+:Mary_Jones rdf:type owl:NamedIndividual ,
+                     :ExecutiveProducer ,
+                     :Woman ;
+            :isManagerOf :Fox_Dept._Management ;
+            :worksAt :Fox_Dept._Management ;
+            :worksOnMovie :Deadpool ;
+            :birthPlace "New York, USA"^^xsd:string ;
+            :birthYear 1980 ;
+            :dateOfHire 2010 ;
+            :hasDegree "true"^^xsd:boolean ;
+            :name "Mary"^^xsd:string ;
+            :noOfPastMovies 6 ;
+            :salary 10000 ;
+            :surname "Jones"^^xsd:string ;
+            :workingHours 45 .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Michael_Bay
 :Michael_Bay rdf:type owl:NamedIndividual ,
                       :Man ,
@@ -820,7 +833,6 @@
              :salary 3000000000 ;
              :surname "Bay"^^xsd:string ;
              :workingHours 20 .
-
 
 
 ###  http://www.semanticweb.org/FilmProduction#Paramount_Dept._Editing
@@ -1029,6 +1041,7 @@
                     :surname "Kotsiopoulos"^^xsd:string ;
                     :workingHours 40 .
 
+
 ###  http://www.semanticweb.org/FilmProduction#Vicky_Kaya
 :Vicky_Kaya rdf:type owl:NamedIndividual ,
                      :ArtDirector ,
@@ -1088,6 +1101,13 @@
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Columbia_Dept._Photography
                         :Dimos_Sidiropoulos
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Deadpool_II
                       )
 ] .
 
@@ -1223,7 +1243,6 @@
                         :The_Smurfs
                       )
 ] .
-
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
