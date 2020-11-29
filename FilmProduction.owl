@@ -484,6 +484,7 @@
 ###  http://www.semanticweb.org/FilmProduction#Deadpool
 :Deadpool rdf:type owl:NamedIndividual ,
                    :Movie ;
+          :isDirectedBy :Tim_Miller ;
           :boxOffice 783000000 ;
           :budget 58000000 ;
           :duration 109 ;
@@ -499,7 +500,19 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Deadpool_II
 :Deadpool_II rdf:type owl:NamedIndividual ,
-                      :Movie .
+                      :Movie ;
+             :isDirectedBy :Tim_Miller ;
+             :boxOffice 785000000 ;
+             :duration 135 ;
+             :genre "Action"^^xsd:string ;
+             :isSequel "true"^^xsd:boolean ;
+             :noOfActors 20 ;
+             :noTimeOnCinema 34 ;
+             :productionYear 2017 ;
+             :rating 5 ;
+             :releaseDate 2018 ;
+             :ticketsSold 250000000 ;
+             :title "Deadpoll II"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitri_Dimitrov
@@ -1088,6 +1101,13 @@
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Columbia_Dept._Photography
                         :Dimos_Sidiropoulos
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Deadpool_II
                       )
 ] .
 
