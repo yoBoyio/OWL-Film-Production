@@ -443,6 +443,25 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/FilmProduction#Apostoles_Kalovolones
+:Apostoles_Kalovolones rdf:type owl:NamedIndividual ,
+                                :DirectorOfPhotography ,
+                                :Man ;
+                       :isManagerOf :Fox_Dept_Photography ;
+                       :worksAt :Fox_Dept_Photography ;
+                       :birthPlace "Neapolis, Greece"^^xsd:string ;
+                       :birthYear 1999 ;
+                       :cameraUsed "Canon A5S356"^^xsd:string ;
+                       :dateOfHire 2018 ;
+                       :hasDegree "false"^^xsd:boolean ;
+                       :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                       :name "Apostoles"^^xsd:string ;
+                       :noOfPastMovies 3 ;
+                       :salary 40000 ;
+                       :surname "Kalovelones"^^xsd:string ;
+                       :workingHours 45 .
+
+
 ###  http://www.semanticweb.org/FilmProduction#Ben_Affleck
 :Ben_Affleck rdf:type owl:NamedIndividual ,
                       :ExecutiveProducer ;
@@ -617,6 +636,12 @@
 :Fox_Dept._Production rdf:type owl:NamedIndividual ,
                                :Production ;
                       :departmentBudget 10000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept_Photography
+:Fox_Dept_Photography rdf:type owl:NamedIndividual ,
+                               :Photography ;
+                      :departmentBudget 5000000 .
 
 
 ###  http://www.semanticweb.org/FilmProduction#George_Koutsiamoneys
@@ -1006,8 +1031,8 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Tim_Miller
 :Tim_Miller rdf:type owl:NamedIndividual ,
-                     :Man ,
-                     :Producer ;
+                     :Director ,
+                     :Man ;
             :isDirecting :Deadpool ,
                          :Deadpool_II ;
             :worksAt :Fox_Dept._Management ;
