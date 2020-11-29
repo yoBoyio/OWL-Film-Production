@@ -228,6 +228,9 @@
 ###  http://www.semanticweb.org/FilmProduction#ArtDirector
 :ArtDirector rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                        [ rdf:type owl:Class ;
+                                                          owl:complementOf :ProductionDesigner
+                                                        ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :worksAt ;
                                                           owl:someValuesFrom :Production
