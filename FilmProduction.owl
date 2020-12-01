@@ -237,7 +237,8 @@
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
-                                 ] .
+                                 ] ;
+             rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Departments
@@ -258,7 +259,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DirectorOfPhotography
@@ -270,7 +272,8 @@
                                                                   ]
                                                                 ) ;
                                              rdf:type owl:Class
-                                           ] .
+                                           ] ;
+                       rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DomainEntity
@@ -291,7 +294,8 @@
                                                    ]
                                                  ) ;
                               rdf:type owl:Class
-                            ] .
+                            ] ;
+        rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Employee
@@ -303,7 +307,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Person .
 
 
 ###  http://www.semanticweb.org/FilmProduction#ExecutiveProducer
@@ -315,7 +320,8 @@
                                                               ]
                                                             ) ;
                                          rdf:type owl:Class
-                                       ] .
+                                       ] ;
+                   rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Female
@@ -337,7 +343,8 @@
                                                 ]
                                               ) ;
                            rdf:type owl:Class
-                         ] .
+                         ] ;
+     rdfs:subClassOf :Person .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Management
@@ -354,7 +361,8 @@
                                                     ]
                                                   ) ;
                                rdf:type owl:Class
-                             ] .
+                             ] ;
+         rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Movie
@@ -385,7 +393,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Production
@@ -402,7 +411,8 @@
                                                                ]
                                                              ) ;
                                           rdf:type owl:Class
-                                        ] .
+                                        ] ;
+                    rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Sex
@@ -424,7 +434,8 @@
                                                           ]
                                                         ) ;
                                      rdf:type owl:Class
-                                   ] .
+                                   ] ;
+               rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Woman
@@ -436,7 +447,8 @@
                                                   ]
                                                 ) ;
                              rdf:type owl:Class
-                           ] .
+                           ] ;
+       rdfs:subClassOf :Person .
 
 
 #################################################################
