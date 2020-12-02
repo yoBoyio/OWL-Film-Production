@@ -517,7 +517,9 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitris_Tolios
 :Dimitris_Tolios rdf:type owl:NamedIndividual ,
+                          :Man ,
                           :SoundDesigner ;
+                 :isManagerOf :Paramount_Dept._Sound ;
                  :worksAt :Paramount_Dept._Sound ;
                  :worksOnMovie :Forrest_Gump ;
                  :birthPlace "Prosotsani, Drama, Greece"^^xsd:string ;
@@ -525,6 +527,7 @@
                  :dateOfHire 2017 ;
                  :hasDegree "false"^^xsd:boolean ;
                  :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                 :microphoneUsed "Blue Yeti usb"^^xsd:string ;
                  :name "Dimitris"^^xsd:string ;
                  :noOfPastMovies 3 ;
                  :salary 35000 ;
@@ -584,6 +587,7 @@
               :genre "Drama"^^xsd:string ;
               :isSequel "false"^^xsd:boolean ;
               :noOfActors 50 ;
+              :noTimeOnCinema 4 ;
               :productionYear 1993 ;
               :rating 13 ;
               :releaseDate 1994 ;
@@ -607,10 +611,12 @@
 :George_Koutsiamoneys rdf:type owl:NamedIndividual ,
                                :DirectorOfPhotography ,
                                :Man ;
+                      :isManagerOf :Paramount_Dept._Photography ;
                       :worksAt :Paramount_Dept._Photography ;
                       :worksOnMovie :Interstellar ;
                       :birthPlace "Elassona, Larisa, Greece"^^xsd:string ;
                       :birthYear 1999 ;
+                      :cameraUsed "Panavision Panaflex Millennium XL2"^^xsd:string ;
                       :dateOfHire 2017 ;
                       :hasDegree "false"^^xsd:boolean ;
                       :hasFullfilledMilitaryService "false"^^xsd:boolean ;
@@ -706,6 +712,7 @@
               :genre "Sci-Fi"^^xsd:string ;
               :isSequel "false"^^xsd:boolean ;
               :noOfActors 45 ;
+              :noTimeOnCinema 5 ;
               :productionYear 2013 ;
               :rating 13 ;
               :releaseDate 2014 ;
@@ -912,6 +919,7 @@
        :isSequel "false"^^xsd:boolean ;
        :noOfActors 61 ;
        :productionYear 1994 ;
+       :rating 18 ;
        :releaseDate 1995 ;
        :ticketsSold 21000000 ;
        :title "Seven"^^xsd:string .
