@@ -228,13 +228,17 @@
 ###  http://www.semanticweb.org/FilmProduction#ArtDirector
 :ArtDirector rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :Employee
+                                                        [ rdf:type owl:Class ;
+                                                          owl:complementOf :ProductionDesigner
+                                                        ]
                                                         [ rdf:type owl:Restriction ;
                                                           owl:onProperty :worksAt ;
                                                           owl:someValuesFrom :Production
                                                         ]
                                                       ) ;
                                    rdf:type owl:Class
-                                 ] .
+                                 ] ;
+             rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Departments
@@ -255,7 +259,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DirectorOfPhotography
@@ -267,7 +272,8 @@
                                                                   ]
                                                                 ) ;
                                              rdf:type owl:Class
-                                           ] .
+                                           ] ;
+                       rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#DomainEntity
@@ -288,7 +294,8 @@
                                                    ]
                                                  ) ;
                               rdf:type owl:Class
-                            ] .
+                            ] ;
+        rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Employee
@@ -300,7 +307,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Person .
 
 
 ###  http://www.semanticweb.org/FilmProduction#ExecutiveProducer
@@ -312,7 +320,8 @@
                                                               ]
                                                             ) ;
                                          rdf:type owl:Class
-                                       ] .
+                                       ] ;
+                   rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Female
@@ -334,7 +343,8 @@
                                                 ]
                                               ) ;
                            rdf:type owl:Class
-                         ] .
+                         ] ;
+     rdfs:subClassOf :Person .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Management
@@ -351,7 +361,8 @@
                                                     ]
                                                   ) ;
                                rdf:type owl:Class
-                             ] .
+                             ] ;
+         rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Movie
@@ -382,7 +393,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+          rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Production
@@ -399,7 +411,8 @@
                                                                ]
                                                              ) ;
                                           rdf:type owl:Class
-                                        ] .
+                                        ] ;
+                    rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Sex
@@ -421,7 +434,8 @@
                                                           ]
                                                         ) ;
                                      rdf:type owl:Class
-                                   ] .
+                                   ] ;
+               rdfs:subClassOf :Employee .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Woman
@@ -433,12 +447,32 @@
                                                   ]
                                                 ) ;
                              rdf:type owl:Class
-                           ] .
+                           ] ;
+       rdfs:subClassOf :Person .
 
 
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.semanticweb.org/FilmProduction#Apostoles_Kalovolones
+:Apostoles_Kalovolones rdf:type owl:NamedIndividual ,
+                                :DirectorOfPhotography ,
+                                :Man ;
+                       :isManagerOf :Fox_Dept_Photography ;
+                       :worksAt :Fox_Dept_Photography ;
+                       :birthPlace "Neapolis, Greece"^^xsd:string ;
+                       :birthYear 1999 ;
+                       :cameraUsed "Canon A5S356"^^xsd:string ;
+                       :dateOfHire 2018 ;
+                       :hasDegree "false"^^xsd:boolean ;
+                       :hasFullfilledMilitaryService "false"^^xsd:boolean ;
+                       :name "Apostoles"^^xsd:string ;
+                       :noOfPastMovies 3 ;
+                       :salary 40000 ;
+                       :surname "Kalovelones"^^xsd:string ;
+                       :workingHours 45 .
+
 
 ###  http://www.semanticweb.org/FilmProduction#Ben_Affleck
 :Ben_Affleck rdf:type owl:NamedIndividual ,
@@ -481,6 +515,7 @@
 ###  http://www.semanticweb.org/FilmProduction#Deadpool
 :Deadpool rdf:type owl:NamedIndividual ,
                    :Movie ;
+          :isDirectedBy :Tim_Miller ;
           :boxOffice 783000000 ;
           :budget 58000000 ;
           :duration 109 ;
@@ -496,7 +531,19 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Deadpool_II
 :Deadpool_II rdf:type owl:NamedIndividual ,
-                      :Movie .
+                      :Movie ;
+             :isDirectedBy :Tim_Miller ;
+             :boxOffice 785000000 ;
+             :duration 135 ;
+             :genre "Action"^^xsd:string ;
+             :isSequel "true"^^xsd:boolean ;
+             :noOfActors 20 ;
+             :noTimeOnCinema 34 ;
+             :productionYear 2017 ;
+             :rating 5 ;
+             :releaseDate 2018 ;
+             :ticketsSold 250000000 ;
+             :title "Deadpoll II"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/FilmProduction#Dimitri_Dimitrov
@@ -605,6 +652,12 @@
 :Fox_Dept._Production rdf:type owl:NamedIndividual ,
                                :Production ;
                       :departmentBudget 10000000 .
+
+
+###  http://www.semanticweb.org/FilmProduction#Fox_Dept_Photography
+:Fox_Dept_Photography rdf:type owl:NamedIndividual ,
+                               :Photography ;
+                      :departmentBudget 5000000 .
 
 
 ###  http://www.semanticweb.org/FilmProduction#George_Koutsiamoneys
@@ -998,8 +1051,8 @@
 
 ###  http://www.semanticweb.org/FilmProduction#Tim_Miller
 :Tim_Miller rdf:type owl:NamedIndividual ,
-                     :Man ,
-                     :Producer ;
+                     :Director ,
+                     :Man ;
             :isDirecting :Deadpool ,
                          :Deadpool_II ;
             :worksAt :Fox_Dept._Management ;
@@ -1093,6 +1146,13 @@
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Columbia_Dept._Photography
                         :Dimos_Sidiropoulos
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Deadpool
+                        :Deadpool_II
                       )
 ] .
 
